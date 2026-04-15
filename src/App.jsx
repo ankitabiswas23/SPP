@@ -40,43 +40,65 @@ export default function SeemaWebsite() {
 
   const proudWorks = [
     {
-      title: 'Luxury Plant Gift Hamper',
-      desc: 'Curated botanical gifting with custom tags and premium wrapping.',
+      title: 'A Green Tribute to Our Roots',
+      desc: `We are deeply proud to have designed and delivered customized indoor plant arrangements that celebrate sustainability and thoughtful gifting, specially curated for a prestigious program at Adamas University.
+
+This project holds a uniquely personal meaning for us, as one of our co-founders is a current student of the university. Being able to serve the very institution that has shaped our journey fills us with gratitude, pride, and a sense of belonging.
+
+To create for our place of inception is more than work for us — it is a heartfelt return.`,
       img: asset('work1.jpg'),
     },
     {
-      title: 'Custom Wedding Print Suite',
-      desc: 'Elegant invitations, menu cards, labels, and keepsakes.',
+      title: 'Crafting Warmth for ICISII 2025',
+      desc: `We were honoured to contribute to the welcoming spirit of ICISII 2025 through our handcrafted botanical souvenirs.
+
+Each piece was thoughtfully created to bring together elegance, memory, and sustainability, setting a warm and distinguished tone for the event. It was a privilege to let our work become a part of such a meaningful gathering.
+
+Once again, serving our place of inception remains one of our greatest honours.`,
       img: asset('work2.jpg'),
     },
     {
-      title: 'Kids Activity Workbook',
-      desc: 'Interactive premium printables and language learning books.',
+      title: 'Honoured Sponsor — QADAM 2.0',
+      desc: `At SEEMA PLANTS & PRINTS, we believe that to return is to honour the trust once placed in us and to preserve the spirit of gratitude.
+
+With immense appreciation, we proudly sponsored a handcrafted and thoughtfully designed celebration cake for QADAM 2.0, the Literary Fest hosted by the English Department at Adamas University.
+
+This gesture was our way of giving back with warmth, elegance, and heartfelt respect.`,
       img: asset('work3.jpg'),
     },
   ];
 
   const plants = [
     {
-      name: 'Desk Plant Gift Box',
+      name: 'Ivory Hexa Serenity',
       price: '₹499',
-      desc: 'Minimal desk plant with custom message tag and premium wrap.',
+      desc: `A refined statement in minimal botanical luxury, Ivory Hexa Serenity features a premium Hahnii Snake Plant gracefully placed in a hexagonal white ceramic pot.
+
+Known for its compact rosette foliage and structured elegance, the Hahnii variety brings a sense of calm sophistication to desks, bedside tables, workspaces, and curated gifting arrangements. The geometric ceramic vessel adds a contemporary architectural touch, making it a timeless décor piece for both modern homes and professional spaces.
+
+Low-maintenance yet visually striking, this arrangement is perfect for those who appreciate clean aesthetics, air-purifying greenery, and understated elegance.`,
       img: asset('plant1.jpg'),
     },
   ];
 
   const prints = [
     {
-      name: 'Premium Certificate Set',
+      name: 'Signature Cork Mug',
       price: '₹299',
-      desc: 'Luxury textured certificates, stickers, and ID card prints.',
+      desc: `A seamless blend of utility, elegance, and personalization, the Signature Cork Mug is crafted from premium-quality ceramic and designed for everyday sophistication.
+
+Its standout feature is the innovative detachable cork coaster base, thoughtfully integrated to protect surfaces while adding a warm tactile finish. The cork layer can be easily removed, offering both convenience and design flexibility.
+
+The mug body is fully customizable with logos, names, event branding, or company identities, making it ideal for corporate gifting, brand promotions, event souvenirs, and premium personalized keepsakes.
+
+Designed to feel elevated yet practical, this piece reflects the kind of innovation that turns an everyday essential into a memorable brand experience.`,
       img: asset('print1.jpg'),
     },
   ];
 
   const [currentWork, setCurrentWork] = useState(0);
-  const [currentPlant, setCurrentPlant] = useState(0);
-  const [currentPrint, setCurrentPrint] = useState(0);
+  const [currentPlant] = useState(0);
+  const [currentPrint] = useState(0);
 
   const wa = '919999999999';
 
@@ -131,16 +153,13 @@ export default function SeemaWebsite() {
         </div>
 
         <div className="rounded-[2rem] overflow-hidden shadow-[0_30px_80px_rgba(24,57,43,0.18)]">
-          <img
-            src={asset('hero.jpg')}
-            className="w-full h-[500px] object-cover"
-          />
+          <img src={asset('hero.jpg')} className="w-full h-[500px] object-cover" />
         </div>
       </section>
 
       <section className="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-6">
         {stats.map((s) => (
-          <div key={s.label} className="bg-white rounded-3xl p-8 shadow-[0_20px_60px_rgba(24,57,43,0.12)] border border-[#18392B]/5 hover:-translate-y-1 transition">
+          <div key={s.label} className="bg-white rounded-3xl p-8 shadow-[0_20px_60px_rgba(24,57,43,0.12)] border border-[#18392B]/5">
             <div className="text-5xl font-bold text-[#18392B]">
               <RollingCounter value={s.value} suffix={s.suffix} />
             </div>
@@ -159,38 +178,67 @@ export default function SeemaWebsite() {
         </div>
 
         <div className="bg-white rounded-[2rem] overflow-hidden shadow-[0_25px_70px_rgba(24,57,43,0.14)] grid md:grid-cols-2">
-          <img src={proudWorks[currentWork].img} className="h-[420px] w-full object-cover" />
-          <div className="p-8 flex flex-col justify-center">
+          <img src={proudWorks[currentWork].img} className="h-[500px] w-full object-cover" />
+          <div className="p-10 flex flex-col justify-center">
             <h3 className="text-3xl font-semibold">{proudWorks[currentWork].title}</h3>
-            <p className="mt-4 text-lg text-[#18392B]/70">{proudWorks[currentWork].desc}</p>
+            <p className="mt-4 whitespace-pre-line leading-8 text-lg text-[#18392B]/80">
+              {proudWorks[currentWork].desc}
+            </p>
           </div>
         </div>
       </section>
 
       <section id="plants" className="max-w-7xl mx-auto px-6 py-20">
         <div className="bg-white rounded-[2rem] p-8 shadow-[0_30px_80px_rgba(24,57,43,0.16)] grid md:grid-cols-2 gap-8 items-center">
-          <img src={plants[currentPlant].img} className="w-full h-[380px] object-cover rounded-[1.5rem]" />
+          <img src={plants[currentPlant].img} className="w-full h-[500px] object-cover rounded-[1.5rem]" />
           <div>
             <h3 className="text-4xl font-serif">{plants[currentPlant].name}</h3>
             <div className="text-3xl mt-4 font-semibold">{plants[currentPlant].price}</div>
-            <p className="mt-4">{plants[currentPlant].desc}</p>
+            <p className="mt-4 whitespace-pre-line leading-8 text-lg text-[#18392B]/80">
+              {plants[currentPlant].desc}
+            </p>
+            <div className="mt-6 flex gap-4">
+              <button onClick={() => openWA(`Hi, I want to order ${plants[currentPlant].name}`)} className="px-6 py-3 rounded-full bg-[#18392B] text-white">
+                Order Now
+              </button>
+              <button onClick={() => openWA(`Hi, I want to enquire about ${plants[currentPlant].name}`)} className="px-6 py-3 rounded-full border border-[#18392B]">
+                Enquire
+              </button>
+            </div>
           </div>
         </div>
       </section>
 
       <section id="prints" className="max-w-7xl mx-auto px-6 py-20">
         <div className="bg-white rounded-[2rem] p-8 shadow-[0_30px_80px_rgba(24,57,43,0.16)] grid md:grid-cols-2 gap-8 items-center">
-          <img src={prints[currentPrint].img} className="w-full h-[380px] object-cover rounded-[1.5rem]" />
+          <img src={prints[currentPrint].img} className="w-full h-[500px] object-cover rounded-[1.5rem]" />
           <div>
             <h3 className="text-4xl font-serif">{prints[currentPrint].name}</h3>
             <div className="text-3xl mt-4 font-semibold">{prints[currentPrint].price}</div>
-            <p className="mt-4">{prints[currentPrint].desc}</p>
+            <p className="mt-4 whitespace-pre-line leading-8 text-lg text-[#18392B]/80">
+              {prints[currentPrint].desc}
+            </p>
+            <div className="mt-6 flex gap-4">
+              <button onClick={() => openWA(`Hi, I want to order ${prints[currentPrint].name}`)} className="px-6 py-3 rounded-full bg-[#18392B] text-white">
+                Order Now
+              </button>
+              <button onClick={() => openWA(`Hi, I want to enquire about ${prints[currentPrint].name}`)} className="px-6 py-3 rounded-full border border-[#18392B]">
+                Enquire
+              </button>
+            </div>
           </div>
         </div>
       </section>
 
       <footer id="contact" className="max-w-7xl mx-auto px-6 py-16 border-t border-[#18392B]/10">
-        <div className="text-3xl font-serif italic">Let’s grow together</div>
+        <div className="text-3xl font-serif tracking-[0.2em] text-center mb-8">
+          LET’S GROW TOGETHER
+        </div>
+        <div className="space-y-3 text-lg text-center">
+          <p>Mobile: +91 9123708284</p>
+          <p>Email: @seemaplantsandprints</p>
+        
+        </div>
       </footer>
     </div>
   );
