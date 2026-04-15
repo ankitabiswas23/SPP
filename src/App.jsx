@@ -100,7 +100,7 @@ Designed to feel elevated yet practical, this piece reflects the kind of innovat
   const [currentPlant] = useState(0);
   const [currentPrint] = useState(0);
 
-  const wa = '919999999999';
+  const wa = '919123708284';
 
   useEffect(() => {
     let link = document.querySelector("link[rel='icon']");
